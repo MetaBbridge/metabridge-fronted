@@ -5,6 +5,7 @@ import {
   argent,
   braavos,
   infuraProvider,
+  jsonRpcProvider,
   lavaProvider,
   nethermindProvider,
   reddioProvider,
@@ -27,8 +28,8 @@ export function StarknetProvider({ children }: StarknetProviderProps) {
 
   const connectors = [
     ...injected,
-    new WebWalletConnector({ url: "https://web.argent.xyz" }),
-    new ArgentMobileConnector(),
+    // new WebWalletConnector({ url: "https://web.argent.xyz" }),
+    // new ArgentMobileConnector(),
   ];
 
   const apiKey = process.env.NEXT_PUBLIC_API_KEY!;
@@ -51,7 +52,9 @@ export function StarknetProvider({ children }: StarknetProviderProps) {
     <StarknetConfig
       connectors={connectors}
       chains={[mainnet, sepolia]}
-      provider={provider}
+      provider={jsonRpcProvider({
+        rpc: (chain) => ({ nodeUrl: process.env.NEXT_PUBLIC_RPC_URL }),
+      })}
       explorer={starkscan}
       autoConnect
     >

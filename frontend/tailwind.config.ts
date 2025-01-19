@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
+  darkMode: ["class", "class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -27,7 +27,7 @@ const config: Config = {
         "text-tertiary": "#BC988C",
         "text-links": "#FF6734",
         shadow: "#EC796B33",
-        backdrop: "#ffffff4d" /* 30% */,
+        backdrop: "#ffffff4d",
         "green-primary": "#CDFFD2",
         "green-secondary": "#10A41F",
         "red-primary": "#FFCDCD",
@@ -35,7 +35,41 @@ const config: Config = {
         "yellow-primary": "#FD9332",
         "yellow-secondary": "#FFEECD",
         "grey-light-primary": "#F9FAFB",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
+
       fontSize: {
         "3xl": ["4em", "1.09"],
         "2xl": ["3em", "1.18"],
@@ -56,7 +90,14 @@ const config: Config = {
       fontFamily: {
         coolvetica: ["coolvetica", "sans-serif"],
       },
-      boxShadow: { "popover-shadow": "0px 0px 50px 2px #EC796B33" },
+      boxShadow: {
+        "popover-shadow": "0px 0px 50px 2px #EC796B33",
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

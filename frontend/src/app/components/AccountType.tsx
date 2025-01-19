@@ -1,23 +1,75 @@
 "use client";
 
+import {
+  useAccount,
+  useContract,
+  useReadContract,
+  useSendTransaction,
+} from "@starknet-react/core";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { CONTRACT_ADDRESS } from "../lib/constant";
+import toast from "react-hot-toast";
+import { abi } from "@/abi/abi";
+import { BigNumberish } from "starknet";
 
 const loader = ({ src }: { src: string }) => {
   return src;
 };
 const AccountType = () => {
-  const [selectedType, setSelectedType] = useState<string>("");
+  const [selectedType, setSelectedType] = useState<"investor" | "entrepreneur">(
+    "entrepreneur",
+  );
+  const { contract } = useContract({ abi: abi, address: CONTRACT_ADDRESS });
+  const { address } = useAccount();
+  const {
+    data: role,
+    error: roleError,
+    isLoading: roleLoading,
+  } = useReadContract({
+    address: CONTRACT_ADDRESS as `0x${string}`,
+    abi,
+    functionName: "check_user_role",
+    enabled: !!address,
+    args: [address?.toString() ?? "0x0"],
+  });
 
   const router = useRouter();
-  //   useEffect(() => {
-  //     if (status === "disconnected") {
-  //       // on disconnect
-  //     } else if (status === "connected") {
-  //       // on connect
-  //     }
-  //   }, [address, status]);
+
+  const { isError, error, send, isPending, isSuccess } = useSendTransaction({
+    calls:
+      contract && address
+        ? [
+            contract.populate("select_role", [
+              address.toString(),
+              selectedType === "entrepreneur" ? 1 : 2,
+            ]),
+          ]
+        : undefined,
+  });
+
+  useEffect(() => {
+    if (isSuccess) {
+      router.push(`/connect/account-setup?type=${selectedType}`);
+    }
+    if (isError) {
+      toast.error(error!.message, { icon: "🔥" });
+    }
+  }, [isSuccess, isError]);
+
+  const handleSelectedRole = async () => {
+    if (!selectedType) {
+      toast.error("Please select a role", { icon: "🔥" });
+      return;
+    }
+    if (role === BigInt(1) || role === BigInt(2)) {
+      toast.error("You have already selected a role", { icon: "🔥" });
+      router.push(`/connect/account-setup?type=${selectedType}`);
+      return;
+    }
+    send();
+  };
 
   return (
     <>
@@ -116,11 +168,15 @@ const AccountType = () => {
 
         <button
           className="my-4 w-full rounded-[16px] bg-[#1443FF] py-4 text-center text-base font-semibold text-white"
-          onClick={() => {
-            router.push(`/connect/account-setup?type=${selectedType}`);
-          }}
+          onClick={handleSelectedRole}
         >
-          Continue
+          {isPending ? (
+            <div className="flex items-center justify-center">
+              <div className="h-6 w-6 animate-spin rounded-full border-2 border-t-2 border-[#fff]" />
+            </div>
+          ) : (
+            "Continue"
+          )}
         </button>
       </div>
     </>

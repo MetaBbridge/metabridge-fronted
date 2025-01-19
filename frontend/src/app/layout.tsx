@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-inter m-0 flex min-h-screen flex-col justify-between bg-white p-0 text-sm md:text-md">
+      <body className="font-inter m-0 flex min-h-screen flex-col bg-white p-0 text-sm md:text-md">
         <StarknetProvider>
           <main>{children}</main>
         </StarknetProvider>

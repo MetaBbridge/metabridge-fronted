@@ -76,4 +76,4 @@ Successful project completions with measurable returns for investors.
 
 ### Concluding Part
 
-MetaBridge leverages the strengths of Starknet to transform traditional investment processes into a secure, transparent, and milestone-driven ecosystem. By providing tokenized equity, AI-driven support, and decentralized governance, MetaBridge empowers entrepreneurs and investors to collaborate effectively, driving growth and innovation in the blockchain-powered economy.
+MetaBridge leverages the strengths of Starknet to transform traditional investment processes into a secure, transparent, and milestone-driven ecosystem. By providing tokenized equity, AI-driven support, and decentralized governance, MetaBridge empowers entrepreneurs and investors to collaborate effectively, driving growth and innovation in the blockchain-powered economy .

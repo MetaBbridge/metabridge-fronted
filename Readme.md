@@ -1,252 +1,79 @@
-# 🏗 STARKNET-SCAFFOLD
+## MetaBridge: A Blockchain and AI Powered Investment Platform
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on Starknet. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+### Overview
 
-⚙️ Built using NextJS, Starknet.js, Starknet-React, Starknetkit, Typescript, Scarb, and Starknet-Foundry.
+MetaBridge is a decentralized platform designed to reform the way entrepreneurs and investors collaborate. By leveraging the power of the Starknet blockchain, MetaBridge creates a secure, transparent, and milestone-driven funding ecosystem. Entrepreneurs can create funding orders for their projects while investors gain access to vetted, tokenized investment opportunities. The platform fosters accountability and trust through blockchain-enabled governance and AI-powered support, ensuring measurable outcomes and successful collaborations.
 
-## REQUIREMENTS
+### Key Features
 
-Before you begin, you need to install the following tools:
+**1. Milestone-Based Funding**
+MetaBridge ensures funds are released incrementally based on pre-defined milestones. This milestone-based funding mechanism fosters accountability, allowing investors to vote on and approve each stage before releasing the next tranche of funds.
 
-- [Node (v18 LTS)](https://nodejs.org/en/download/)
-- [Rust](https://www.rust-lang.org/tools/install)
-- [Git](https://git-scm.com/downloads)
+**2. Tokenized Equity Representation**
+Investors’ contributions are represented as blockchain tokens, providing a seamless and transparent way to track ownership and enabling secondary market opportunities for tokenized equity shares.
 
-## QUICK START
+**3. AI-Driven Support**
+To simplify the onboarding and funding process, MetaBridge offers AI-powered tools for both entrepreneurs and investors: Entrepreneurs receive assistance in creating funding orders, understanding compliance guidelines, and structuring compelling business plans.
+Investors benefit from project analysis, risk assessments, and tailored investment recommendations.
 
-To get started with Starknet-Scaffold, Clone this repo:
+**4. Transparent Governance**
+Using Starknet’s blockchain infrastructure, all transactions, votes, and funding decisions are immutably recorded. Decentralized governance ensures that both entrepreneurs and investors have a voice in the funding process through quorum-based decision-making.
 
-```
-git clone git@github.com:horuslabsio/Starknet-Scaffold.git
-cd Starknet-Scaffold
-```
+**5. User-Centric Design**
+MetaBridge provides intuitive interfaces tailored to its users:
 
-Or install using create-starknet-app (recommended).
+- Entrepreneurs: A streamlined dashboard for creating and managing funding orders, uploading verification documents, and tracking project progress.
 
-PS: defaults to debugger mode, if no type is specified.
+- Investors: Tools to browse verified projects, track portfolios, vote on milestones, and manage tokenized equity holdings.
 
-## FEATURES
+### How It Works
 
-### Contract Section
+**Registration & Verification:**
+Entrepreneurs and investors sign up via Starknet Wallet Connect, using Argent or Braavos wallets. KYC verification ensures all users meet compliance standards.
 
-Scripts exists to make your life easier! Here are available scripts and features:
-| Feature | Available |
-| :---: | :---: |
-| Build Contract | ✅ |
-| Format Contract | ✅ |
-| Verify Contract | ✅ |
-| Run custom scripts | ✅ |
-| Generate SRC5 Interface | ✅ |
-| Prepare Account | ✅ |
-| Deploy Account| ✅ |
-| Delete Account | ✅ |
-| Declare Contract | ✅ |
-| Deploy Contract | ✅ |
-| Devnet spin up | ✅ |
-| Burner wallets for debugging | ✅ |
-| Starknet contract Deployer | ✅ |
-| sepETH/sepSTRK faucet | ✅ |
-| Cairo Wikipedia | ✅ |
+**Order Creation:**
+Entrepreneurs create funding orders by providing detailed information, including a company overview, funding requirements, utilization plans, milestones, and supporting documentation such as legal certifications and financial records.
 
-### Dojo Section
+**Opportunity Discovery:**
+Verified funding orders are listed publicly, enabling investors to browse, analyze, and select opportunities based on their preferences.
 
-Scripts to make building with Dojo easier! Here are available scripts and features:
-| Feature | Available |
-| :---: | :---: |
-| Initialize Dojo Project | ✅ |
-| Build Dojo Project | ✅ |
-| Deploy Katana | ✅ |
-| Migrate Dojo Project | ✅ |
+**Investment & Milestone Voting:**
+Investors contribute funds, which are locked in smart contracts. Funds are disbursed incrementally as milestones are achieved, with investors voting to approve progress before each disbursement.
 
-### UI Section
+**Tokenized Equity:**
+Investors receive tokenized shares representing their stake in the project, enabling easy tracking of ownership and access to secondary market trading.
 
-UI components, to spin up faster UIs. Any missing UI component you'd like to see? please open a PR:)
-| Feature | Available |
-| :---: | :---: |
-| Connect button & Custom Wallet Modal | ✅ |
-| Address bar (Displays StarknetID) | ✅ |
-| Transactions List | ✅ |
-| modal to copy/disconnect/view account | ✅ |
-| Display account balance | ✅ |
-| Switch/display network | ✅ |
-| App Light/Dark mode | ✅ |
-| Burner wallet UI| ✅ |
+### Technical Architecture of MetaBridge
 
-## USAGE
+**Blockchain Integration:**
+MetaBridge uses Starknet's zero-knowledge proof (zk-proof) technology to ensure secure, scalable, and decentralized operations.
 
-### Contract Section
+Smart contracts manage milestone-based fund disbursement, tokenization, and transaction recording.
 
-The `contract` folder contains all the tools needed to write, build, test and deploy your Starknet smart contracts. It is built with Scarb and Starknet Foundry. Here are common operations you can perform on your contracts:
+**Security:**
+Smart contract audits and end-to-end encryption protect all sensitive data and transactions.
+Compliance with KYC/AML regulations ensures a trustworthy ecosystem.
 
-#### Build contracts
+**Platform Design:**
+A responsive web application for both entrepreneurs and investors, featuring secure APIs for seamless interaction between blockchain and database layers.
 
-To build your smart contracts, from the base repository run:
+### Impact and Vision
 
-```
-npm run build-contracts
-```
+MetaBridge aims to democratize funding by removing traditional barriers and creating a transparent, secure platform where businesses and investors can thrive. By focusing on milestone-based funding and tokenized equity, the platform ensures accountability, fosters trust, and provides measurable returns for all stakeholders.
+This MVP lays the foundation for future innovations, including the introduction of collaborative forums, AI-enhanced analytics, and an expanded ecosystem of decentralized financial tools. MetaBridge is not just a funding platform—it’s a new way of fostering collaboration and growth in the decentralized economy.
 
-#### Format contracts
+### Why Starknet?
 
-Scarb comes with an in-built cairo formatter. To utilize it run:
+Starknet's zk-proof technology offers unparalleled scalability, security, and decentralization, making it the ideal blockchain for MetaBridge’s vision. Its efficient handling of complex computations ensures the seamless implementation of milestone-based funding and tokenized equity. Furthermore, Starknet’s robust developer ecosystem provides the tools necessary for rapid iteration and future expansion.
 
-```
-npm run format-contracts
-```
+### Success Metrics
 
-#### Verify contracts
+MetaBridge will measure its success based on:
+The number of businesses and investors onboarded.
+Total funds invested through the platform.
+User engagement, including milestone approvals and portfolio activity.
+Successful project completions with measurable returns for investors.
 
-To verify your smart contracts, from the base repository run:
+### Concluding Part
 
-```
-npm run verify-contracts --contract-address=<CONTRACT_ADDRESS> --contract-name=<CONTRACT_NAME> --network=<NETWORK>
-```
-
-#### Test contracts
-
-To run your tests:
-
-```
-npm run test-contracts
-```
-
-#### Run custom starknet foundry scripts
-
-To run a custom starknet foundry deploy/declare/invoke script:
-
-```
-npm run contract-scripts <SCRIPT_NAME> --url=<RPC_URL>
-```
-
-#### Generate an SRC-5 interface ID for your contracts
-
-To generate an interface ID, run:
-
-```
-npm run generate-interface <PATH_TO_INTERFACE>
-```
-
-#### Prepare Account for deployment
-
-To prepare your account for deployment, run:
-
-```
-npm run prepare-account --url=<RPC_URL> --name=<ACCOUNT_NAME> <PROFILE_NAME>
-```
-
-generates a profile which is added to `scarb.toml` and can be passed to other commands.
-
-#### Deploy Account
-
-To deploy an account:
-
-```
-npm run deploy-account --profile=<MY_PROFILE> --name=<ACCOUNT_NAME> --feetoken=<FEE_TOKEN> --maxfee=<MAX_FEE>
-```
-
-where the `profile` is gotten from `snfoundry.toml`, `name` is the prepared account and `maxfee` is the specified max fee.
-
-#### Delete Account
-
-To delete an account:
-
-```
-npm run delete-account --profile=<MY_PROFILE> --accountfile=<PATH_TO_ACCOUNT_FILE> --name=<ACCOUNT_NAME> --network=<alpha-mainnet | alpha-goerli>
-```
-
-#### Declare Contract
-
-To declare a contract:
-
-```
-npm run declare-contract --profile=<MY_PROFILE> --contract=<CONTRACT_NAME> --feetoken=<FEE_TOKEN>
-```
-
-#### Deploy Contract
-
-To deploy a contract:
-
-```
-npm run deploy-contract --profile=<MY_PROFILE> --feetoken=<FEE_TOKEN> --class=<CONTRACT_CLASSHASH>
-```
-
-#### Run Starknet-Devnet
-
-Ensure to have Docker installed. To run starknet-devnet:
-
-```
-npm run devnet
-```
-
-### Dojo Section
-
-The `dojo-contracts` folder contains all the tools needed to write, build, test and dojo projects. It is built with sozo and katana. Here are common operations you can perform on your dojo contracts.
-
-#### Initialize Dojo Project
-
-To initialize a dojo project, from the base repository:
-
-```
-npm run initialize-dojo --name=<PROJECT_NAME>
-```
-
-#### Build Dojo Project
-
-To build your dojo project, from the base repository run:
-
-```
-npm run build-dojo --name=<PROJECT_NAME>
-```
-
-### Deploy Katana
-
-To build deploy katana, from the base repository run:
-
-```
-npm run deploy-dojo-katana --name=<PROJECT_NAME>
-```
-
-#### Migrate Dojo Project
-
-To migrate your dojo project, from the base repository run:
-
-```
-npm run migrate-dojo --name=<PROJECT_NAME>
-```
-
-### UI SECTION
-
-The `frontend` section contains all UI components. Built using NextJS, Starknet.js, Starknet-React, Starknetkit, and Typescript.
-
-#### Run UI
-
-To run UI, from the base repository:
-
-```
-npm run start
-```
-
-#### Build UI
-
-To build your frontend, from the base repository run:
-
-```
-npm run build-ui
-```
-
-## DOCUMENTATION
-
-Documentations of tools used in this scaffold:
-
-1. [Scarb](https://docs.swmansion.com/scarb/docs.html)
-2. [Starknet Foundry](https://foundry-rs.github.io/starknet-foundry/index.html)
-3. [Nextjs](https://nextjs.org/docs)
-4. [Starknetjs](https://www.starknetjs.com/docs/API/)
-5. [Starknet-React](https://starknet-react.com/docs/getting-started)
-6. [Starknetkit](https://www.starknetkit.com/docs/getting-started)
-
-## HOW TO CONTRIBUTE TO STARKNET-SCAFFOLD
-
-We welcome contributions to Starknet-Scaffold!
-
-Please see [CONTRIBUTING.MD](https://github.com/argentlabs/Starknet-Scaffold/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Starknet-Scaffold.
+MetaBridge leverages the strengths of Starknet to transform traditional investment processes into a secure, transparent, and milestone-driven ecosystem. By providing tokenized equity, AI-driven support, and decentralized governance, MetaBridge empowers entrepreneurs and investors to collaborate effectively, driving growth and innovation in the blockchain-powered economy.

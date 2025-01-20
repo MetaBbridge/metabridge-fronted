@@ -1,4 +1,6 @@
-## MetaBridge: A Blockchain and AI Powered Investment Platform
+## MetaBridge Frontend: A Blockchain and AI Powered Investment Platform
+
+![Metabrdige Logo](frontend/public/assets/logo-horizontal.svg)
 
 ### Overview
 
